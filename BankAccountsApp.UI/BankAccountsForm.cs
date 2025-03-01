@@ -22,5 +22,29 @@ namespace BankAccountsApp.UI
             dgvBankAccounts.DataSource = bankAccounts;
             txtOwner.Text = string.Empty;
         }
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            if (dgvBankAccounts.SelectedRows.Count == 1)
+            {
+                BankAccount selectedBankAccount = dgvBankAccounts.SelectedRows[0].DataBoundItem as BankAccount;
+
+                string message = selectedBankAccount.Deposit(nudAmount.Value);
+                RefreshGrid();
+                nudAmount.Value = 0;
+                MessageBox.Show(message);
+            }
+        }
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            if (dgvBankAccounts.SelectedRows.Count == 1)
+            {
+                BankAccount selectedBankAccount = dgvBankAccounts.SelectedRows[0].DataBoundItem as BankAccount;
+
+                string message = selectedBankAccount.Withdraw(nudAmount.Value);
+                RefreshGrid();
+                nudAmount.Value = 0;
+                MessageBox.Show(message);
+            }
+        }
     }
 }
