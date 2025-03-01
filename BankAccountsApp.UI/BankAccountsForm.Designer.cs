@@ -72,6 +72,7 @@
             // nudAmount
             // 
             nudAmount.Location = new Point(135, 281);
+            nudAmount.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             nudAmount.Name = "nudAmount";
             nudAmount.Size = new Size(218, 34);
             nudAmount.TabIndex = 3;

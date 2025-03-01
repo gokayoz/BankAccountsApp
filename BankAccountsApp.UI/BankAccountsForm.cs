@@ -11,9 +11,14 @@ namespace BankAccountsApp.UI
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            BankAccount bankAccount = new(txtOwner.Text);
-            bankAccounts.Add(bankAccount);
-
+            if (string.IsNullOrEmpty(txtOwner.Text))
+            {
+                return;
+            }
+            else
+            {
+                bankAccounts.Add(new BankAccount(txtOwner.Text));
+            }
             RefreshGrid();
         }
         private void RefreshGrid()

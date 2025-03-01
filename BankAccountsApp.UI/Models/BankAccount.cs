@@ -20,15 +20,31 @@ namespace BankAccountsApp.UI.Models
 
         public string Deposit(decimal amount)
         {
-            Balance += amount;
+            if (amount <= 0)
+            {
+                return "You can not deposit $" + amount;
+            }
+            if (amount > 220000)
+            {
+                return "AML Deposit Limited Reached."; // Anti-Money Laundering
+            }
 
-            return "Deposit complated successfully.";
+            Balance += amount;
+            return "Deposit completed successfully.";
         }
         public string Withdraw(decimal amount)
         {
-            Balance -= amount;
+            if (amount <= 0)
+            {
+                return "You can not withdraw $" + amount;
+            }
+            if (amount > Balance)
+            {
+                return "You don't have enough money.";
+            }
 
-            return "Withdraw complated successfully.";
+            Balance -= amount;
+            return "Withdraw completed successfully.";
         }
     }
 }
