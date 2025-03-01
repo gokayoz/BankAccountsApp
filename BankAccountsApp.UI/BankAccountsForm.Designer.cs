@@ -48,9 +48,11 @@
             btnCreate.TabIndex = 0;
             btnCreate.Text = "Create Account";
             btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // dgvBankAccounts
             // 
+            dgvBankAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBankAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBankAccounts.Location = new Point(388, 12);
             dgvBankAccounts.Name = "dgvBankAccounts";
@@ -122,8 +124,9 @@
             Controls.Add(btnDeposit);
             Controls.Add(btnCreate);
             Font = new Font("Segoe UI", 12F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "BankAccountsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bank Accounts";
             ((System.ComponentModel.ISupportInitialize)dgvBankAccounts).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudAmount).EndInit();
