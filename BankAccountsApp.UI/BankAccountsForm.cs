@@ -15,11 +15,15 @@ namespace BankAccountsApp.UI
             {
                 return;
             }
+            if (nudInterestRate.Value > 0)
+            {
+                bankAccounts.Add(new SavingsAccount(txtOwner.Text, nudInterestRate.Value));
+            }
             else
             {
                 bankAccounts.Add(new BankAccount(txtOwner.Text));
             }
-            RefreshGrid();
+            RefreshGrid(); ;
         }
         private void RefreshGrid()
         {
