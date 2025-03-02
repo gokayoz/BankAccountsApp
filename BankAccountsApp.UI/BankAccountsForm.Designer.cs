@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BankAccountsForm));
             btnCreate = new Button();
             dgvBankAccounts = new DataGridView();
             label1 = new Label();
@@ -45,8 +46,8 @@
             // 
             // btnCreate
             // 
-            btnCreate.BackColor = SystemColors.ButtonFace;
-            btnCreate.Location = new Point(163, 164);
+            btnCreate.BackColor = Color.Gainsboro;
+            btnCreate.Location = new Point(171, 164);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(218, 43);
             btnCreate.TabIndex = 0;
@@ -57,17 +58,18 @@
             // dgvBankAccounts
             // 
             dgvBankAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBankAccounts.BackgroundColor = Color.White;
             dgvBankAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBankAccounts.Location = new Point(426, 12);
+            dgvBankAccounts.Location = new Point(409, 12);
             dgvBankAccounts.Name = "dgvBankAccounts";
             dgvBankAccounts.RowHeadersWidth = 51;
-            dgvBankAccounts.Size = new Size(641, 265);
+            dgvBankAccounts.Size = new Size(650, 350);
             dgvBankAccounts.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(65, 27);
+            label1.Location = new Point(73, 27);
             label1.Name = "label1";
             label1.Size = new Size(73, 28);
             label1.TabIndex = 2;
@@ -75,7 +77,7 @@
             // 
             // nudAmount
             // 
-            nudAmount.Location = new Point(163, 243);
+            nudAmount.Location = new Point(171, 243);
             nudAmount.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             nudAmount.Name = "nudAmount";
             nudAmount.Size = new Size(218, 34);
@@ -84,7 +86,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(51, 245);
+            label2.Location = new Point(59, 245);
             label2.Name = "label2";
             label2.Size = new Size(87, 28);
             label2.TabIndex = 2;
@@ -92,17 +94,17 @@
             // 
             // txtOwner
             // 
-            txtOwner.Location = new Point(163, 24);
+            txtOwner.Location = new Point(171, 24);
             txtOwner.Name = "txtOwner";
             txtOwner.Size = new Size(218, 34);
             txtOwner.TabIndex = 4;
             // 
             // btnDeposit
             // 
-            btnDeposit.BackColor = SystemColors.ButtonFace;
-            btnDeposit.Location = new Point(484, 287);
+            btnDeposit.BackColor = Color.Gainsboro;
+            btnDeposit.Location = new Point(19, 319);
             btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(218, 43);
+            btnDeposit.Size = new Size(178, 43);
             btnDeposit.TabIndex = 0;
             btnDeposit.Text = "Deposit";
             btnDeposit.UseVisualStyleBackColor = false;
@@ -110,10 +112,10 @@
             // 
             // btnWithdraw
             // 
-            btnWithdraw.BackColor = SystemColors.ButtonFace;
-            btnWithdraw.Location = new Point(799, 287);
+            btnWithdraw.BackColor = Color.Gainsboro;
+            btnWithdraw.Location = new Point(211, 319);
             btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(218, 43);
+            btnWithdraw.Size = new Size(178, 43);
             btnWithdraw.TabIndex = 0;
             btnWithdraw.Text = "Withdraw";
             btnWithdraw.UseVisualStyleBackColor = false;
@@ -122,7 +124,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(15, 92);
+            label3.Location = new Point(19, 102);
             label3.Name = "label3";
             label3.Size = new Size(142, 28);
             label3.TabIndex = 5;
@@ -130,7 +132,7 @@
             // 
             // nudInterestRate
             // 
-            nudInterestRate.Location = new Point(163, 90);
+            nudInterestRate.Location = new Point(171, 100);
             nudInterestRate.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             nudInterestRate.Name = "nudInterestRate";
             nudInterestRate.Size = new Size(218, 34);
@@ -140,8 +142,8 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(1079, 341);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1072, 377);
             Controls.Add(label3);
             Controls.Add(txtOwner);
             Controls.Add(label2);
@@ -153,6 +155,7 @@
             Controls.Add(btnDeposit);
             Controls.Add(btnCreate);
             Font = new Font("Segoe UI", 12F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "BankAccountsForm";
             StartPosition = FormStartPosition.CenterScreen;
