@@ -18,6 +18,7 @@ namespace BankAccountsApp.UI
                 MessageBox.Show("Please enter a valid value!");
                 return;
             }
+
             if (nudInterestRate.Value > 0)
             {
                 bankAccounts.Add(new SavingsAccount(txtOwner.Text, nudInterestRate.Value));
