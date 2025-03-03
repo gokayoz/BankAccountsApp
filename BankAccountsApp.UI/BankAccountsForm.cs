@@ -1,4 +1,6 @@
 using BankAccountsApp.UI.Models;
+using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace BankAccountsApp.UI
 {
@@ -11,8 +13,9 @@ namespace BankAccountsApp.UI
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtOwner.Text))
+            if (string.IsNullOrWhiteSpace(txtOwner.Text) || !Regex.IsMatch(txtOwner.Text, @"^[a-zA-ZçÇðÐýÝöÖþÞüÜ]+$"))
             {
+                MessageBox.Show("Please enter a valid value!");
                 return;
             }
             if (nudInterestRate.Value > 0)
